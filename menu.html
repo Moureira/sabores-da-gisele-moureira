@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da GiseLe Moureira - Cardápio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #a0522d;
+            --secondary-color: #f5e9dd;
+            --accent-color: #d2691e;
+            --text-dark: #4a2c2a;
+            --text-light: #8b7355;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            color: var(--text-dark);
+            background-color: #fefefe;
+            padding-top: 20px;
+        }
+        
+        .header-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #f0e6d6;
+            font-size: 1.2rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .menu-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border: 1px solid #f0e6d6;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .menu-card-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .menu-card-body {
+            padding: 20px;
+        }
+        
+        .menu-item-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .menu-item-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .menu-item-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-align: right;
+        }
+        
+        .badge-popular {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+        
+        .category-badge {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .contact-info {
+            color: #f0e6d6;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .navbar-custom {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color);
+        }
+        
+        .order-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .order-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <div class="container-fluid header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="logo">Sabores da GiseLe Moureira</h1>
+                    <p class="tagline">Doces finos e bolcachinhas artesanais feitos com amor e ingredientes selecionados</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button class="order-btn mt-3 mt-md-0">
+                        <i class="fas fa-shopping-cart"></i> Fazer Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navegação por categorias -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#bolcachinhas">Bolcachinhas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#doces-finos">Doces Finos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tortas">Tortas & Bolos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#especiais">Especiais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#bebidas">Bebidas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <!-- Bolcachinhas -->
+        <section id="bolcachinhas" class="mb-5">
+            <h2 class="section-title">Bolcachinhas Artesanais</h2>
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card position-relative">
+                        <span class="badge-popular">Mais Pedido</span>
+                        <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolcachinha de Chocolate com Avelã">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Chocolate com Avelã</h5>
+                            <p class="menu-item-description">Bolcachinha crocante recheada com creme de chocolate belga e avelãs selecionadas. Uma combinação clássica irresistível.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 8,90</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1578985545067-53d6ba6d1c93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolcachinha de Baunilha com Framboesa">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Baunilha com Framboesa</h5>
+                            <p class="menu-item-description">Massa delicada de baunilha com recheio de framboesa fresca. Um equilíbrio perfeito entre doce e ácido.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 7,50</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolcachinha de Limão Siciliano">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Limão Siciliano</h5>
+                            <p class="menu-item-description">Sabor refrescante de limão siciliano com uma pitada de gengibre. Perfeita para acompanhar um chá da tarde.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 6,90</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Doces Finos -->
+        <section id="doces-finos" class="mb-5">
+            <h2 class="section-title">Doces Finos & Sobremesas</h2>
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card position-relative">
+                        <span class="badge-popular">Recomendado</span>
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Brigadeiro Gourmet">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Doce Fino</span>
+                            <h5 class="menu-item-title">Brigadeiro Gourmet</h5>
+                            <p class="menu-item-description">Feito com chocolate belga 70% e leite condensado artesanal. Finalizado com cacau em pó ou granulado de chocolate.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 6,50 (un.)</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Macaron Francês">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Doce Fino</span>
+                            <h5 class="menu-item-title">Macaron Francês</h5>
+                            <p class="menu-item-description">Delicados macarons com recheios variados: framboesa, pistache, baunilha e chocolate. Autêntica receita francesa.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 9,90 (un.)</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1624353365286-3f8d62dadadf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Petit Gâteau">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Sobremesa</span>
+                            <h5 class="menu-item-title">Petit Gâteau</h5>
+                            <p class="menu-item-description">Mini bolo de chocolate com recheio cremoso que derrete na boca. Acompanha sorvete de baunilha artesanal.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 24,90</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tortas & Bolos -->
+        <section id="tortas" class="mb-5">
+            <h2 class="section-title">Tortas & Bolos</h2>
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Torta de Limão">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Torta</span>
+                            <h5 class="menu-item-title">Torta de Limão Merengue</h5>
+                            <p class="menu-item-description">Base crocante de biscoito, creme de limão siciliano e merengue italiano dourado. Clássico aperfeiçoado.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 42,90</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card position-relative">
+                        <span class="badge-popular">Especial</span>
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolo Red Velvet">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolo</span>
+                            <h5 class="menu-item-title">Bolo Red Velvet</h5>
+                            <p class="menu-item-description">Camadas de bolo vermelho aveludado com cream cheese frosting. Uma experiência única de texturas e sabores.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 56,90</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Cheesecake de Frutas Vermelhas">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Torta</span>
+                            <h5 class="menu-item-title">Cheesecake de Frutas Vermelhas</h5>
+                            <p class="menu-item-description">Base de biscoito, creme de cream cheese suave e cobertura de frutas vermelhas frescas. Equilíbrio perfeito.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="menu-item-price">R$ 48,90</span>
+                                <button class="btn btn-sm order-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Informações adicionais -->
+        <div class="row mt-5 mb-4">
+            <div class="col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: var(--primary-color);">
+                            <i class="fas fa-info-circle me-2"></i> Informações Importantes
+                        </h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border-0 px-0">
+                                <i class="fas fa-clock text-primary me-2"></i> 
+                                <strong>Horário de funcionamento:</strong> Terça a Domingo, 9h às 20h
+                            </li>
+                            <li class="list-group-item border-0 px-0">
+                                <i class="fas fa-truck text-primary me-2"></i> 
+                                <strong>Delivery:</strong> Entregamos em toda a região
+                            </li>
+                            <li class="list-group-item border-0 px-0">
+                                <i class="fas fa-shopping-bag text-primary me-2"></i> 
+                                <strong>Encomendas:</strong> Pedidos com 48h de antecedência
+                            </li>
+                            <li class="list-group-item border-0 px-0">
+                                <i class="fas fa-leaf text-primary me-2"></i> 
+                                <strong>Ingredientes:</strong> Utilizamos produtos frescos e de qualidade
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: var(--primary-color);">
+                            <i class="fas fa-star me-2"></i> Destaques da Casa
+                        </h4>
+                        <div class="row mt-3">
+                            <div class="col-6 text-center">
+                                <div class="p-3 border rounded">
+                                    <i class="fas fa-award fa-2x mb-2" style="color: var(--accent-color);"></i>
+                                    <h6>Receitas Exclusivas</h6>
+                                    <p class="small">Fórmulas criadas pela Chef GiseLe</p>
+                                </div>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="p-3 border rounded">
+                                    <i class="fas fa-heart fa-2x mb-2" style="color: var(--accent-color);"></i>
+                                    <h6>Feito com Amor</h6>
+                                    <p class="small">Cada doce preparado artesanalmente</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 text-center">
+                                <div class="p-3 border rounded">
+                                    <i class="fas fa-seedling fa-2x mb-2" style="color: var(--accent-color);"></i>
+                                    <h6>Ingredientes Selecionados</h6>
+                                    <p class="small">Matérias-primas de alta qualidade</p>
+                                </div>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="p-3 border rounded">
+                                    <i class="fas fa-birthday-cake fa-2x mb-2" style="color: var(--accent-color);"></i>
+                                    <h6>Encomendas Especiais</h6>
+                                    <p class="small">Celebre momentos inesquecíveis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h4 class="mb-3">Sabores da GiseLe Moureira</h4>
+                    <p>Doces finos e bolcachinhas artesanais preparados com técnica, paixão e os melhores ingredientes.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h4 class="mb-3">Contato</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro</p>
+                        <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                        <p><i class="fas fa-envelope"></i> contato@saboresdagisele.com.br</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h4 class="mb-3">Formas de Pagamento</h4>
+                    <div class="mb-3">
+                        <i class="fab fa-cc-visa fa-2x me-2"></i>
+                        <i class="fab fa-cc-mastercard fa-2x me-2"></i>
+                        <i class="fab fa-cc-amex fa-2x me-2"></i>
+                        <i class="fab fa-cc-paypal fa-2x"></i>
+                    </div>
+                    <p class="small">Aceitamos também PIX e dinheiro.</p>
+                    <button class="order-btn mt-3">
+                        <i class="fas fa-comment-alt"></i> Fale Conosco
+                    </button>
+                </div>
+            </div>
+            
+            <div class="row mt-4 pt-3 border-top border-light">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2023 Sabores da GiseLe Moureira. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script para navegação suave -->
+    <script>
+        // Navegação suave para as seções
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remover classe active de todos os links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Adicionar classe active ao link clicado
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Simulação de adicionar ao carrinho
+        document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemName = this.closest('.menu-card').querySelector('.menu-item-title').textContent;
+                const itemPrice = this.closest('.menu-card').querySelector('.menu-item-price').textContent;
+                
+                // Feedback visual
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Adicionado';
+                this.classList.add('btn-success');
+                this.classList.remove('order-btn');
+                
+                // Restaurar o botão após 2 segundos
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.classList.remove('btn-success');
+                    this.classList.add('order-btn');
+                }, 2000);
+                
+                // Aqui normalmente enviaríamos para um carrinho de compras
+                console.log(`Item adicionado: ${itemName} - ${itemPrice}`);
+            });
+        });
+    </script>
+</body>
+</html>
