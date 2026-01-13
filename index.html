@@ -3,86 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio - Sabores da GiseLe Moureira</title>
+    <title>Sabores da GiseLe Moureira - Cardápio</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rosa-poeira: #F8E9E9;
-            --rosa-suave: #F5D6D6;
-            --rosa-escuro: #D4A5A5;
-            --dourado: #D4AF37;
-            --marrom-claro: #A67B5B;
-            --marrom-escuro: #8B5A2B;
-            --cinza-claro: #F9F5F0;
-            --texto-escuro: #5D4037;
+            --primary-color: #a0522d;
+            --secondary-color: #f5e9dd;
+            --accent-color: #d2691e;
+            --text-dark: #4a2c2a;
+            --text-light: #8b7355;
+            --gold: #d4af37;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--texto-escuro);
-            background-color: var(--cinza-claro);
-            line-height: 1.8;
-            overflow-x: hidden;
+            font-family: 'Georgia', serif;
+            color: var(--text-dark);
+            background-color: #fefefe;
+            padding-top: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f5e9dd' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        .page-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+        .header-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 0 40px;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
             position: relative;
             overflow: hidden;
         }
         
-        .decorative-border {
-            position: absolute;
-            width: 100%;
-            height: 8px;
-            background: linear-gradient(90deg, var(--rosa-suave), var(--dourado), var(--rosa-suave));
-            top: 0;
-            left: 0;
-            z-index: 10;
-        }
-        
-        .header {
-            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
-                        url('https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 60px 0 40px;
-            text-align: center;
-            position: relative;
-            border-bottom: 1px solid var(--rosa-poeira);
-        }
-        
-        .header::before {
+        .header-section::after {
             content: "";
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f5d6d6' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.3;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--accent-color), var(--gold));
         }
         
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4.2rem;
-            color: var(--marrom-escuro);
-            margin-bottom: 10px;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
         }
@@ -92,764 +64,636 @@
             position: absolute;
             width: 60%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
             bottom: -10px;
             left: 20%;
         }
         
-        .subtitle {
-            font-size: 1.3rem;
-            color: var(--marrom-claro);
+        .tagline {
             font-style: italic;
+            color: #f0e6d6;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .encomenda-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--gold);
+            padding: 15px 20px;
             margin-top: 25px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 300;
-        }
-        
-        .encomenda-notice {
-            background-color: var(--rosa-poeira);
-            padding: 25px;
-            margin: 40px 0;
-            border-radius: 0;
-            border-left: 4px solid var(--dourado);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .encomenda-notice::before {
-            content: "✦";
-            position: absolute;
-            font-size: 2rem;
-            color: var(--dourado);
-            opacity: 0.3;
-            top: 10px;
-            left: 10px;
-        }
-        
-        .encomenda-notice::after {
-            content: "✦";
-            position: absolute;
-            font-size: 2rem;
-            color: var(--dourado);
-            opacity: 0.3;
-            bottom: 10px;
-            right: 10px;
+            border-radius: 0 10px 10px 0;
         }
         
         .section-title {
-            text-align: center;
-            color: var(--marrom-escuro);
-            margin: 70px 0 40px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 12px;
+            margin-bottom: 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 1.8rem;
             position: relative;
-            font-size: 2.8rem;
-        }
-        
-        .section-title::before {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 1px;
-            background-color: var(--dourado);
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
         }
         
         .section-title::after {
-            content: "❀";
+            content: "✦";
             position: absolute;
-            font-size: 1.5rem;
-            color: var(--rosa-escuro);
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .menu-category {
-            margin-bottom: 80px;
-        }
-        
-        .menu-item {
-            padding: 30px;
-            margin-bottom: 25px;
+            right: 0;
+            bottom: -12px;
             background-color: white;
-            border-radius: 2px;
-            border: 1px solid var(--rosa-poeira);
-            transition: all 0.3s ease;
-            position: relative;
+            padding: 0 10px;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+        
+        .menu-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
             height: 100%;
+            border: 1px solid #f0e6d6;
+            margin-bottom: 25px;
         }
         
-        .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(212, 165, 165, 0.1);
-            border-color: var(--rosa-escuro);
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
         }
         
-        .item-header {
+        .menu-card-img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+            border-bottom: 1px solid #f0e6d6;
+        }
+        
+        .menu-card-body {
+            padding: 25px;
+        }
+        
+        .menu-item-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .menu-item-description {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .menu-item-price-container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed var(--rosa-suave);
-            padding-bottom: 15px;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px dashed #f0e6d6;
         }
         
-        .item-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--marrom-escuro);
-            font-weight: 600;
-            line-height: 1.3;
-            margin: 0;
+        .menu-item-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.6rem;
+            text-align: right;
         }
         
-        .item-price {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.9rem;
-            color: var(--dourado);
-            font-weight: 700;
-            white-space: nowrap;
-            margin-left: 15px;
-        }
-        
-        .item-description {
-            color: var(--texto-escuro);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-        
-        .item-details {
-            color: var(--marrom-claro);
+        .price-detail {
+            color: var(--text-light);
             font-size: 0.9rem;
             font-style: italic;
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
         }
         
-        .item-details i {
-            margin-right: 8px;
-            color: var(--rosa-escuro);
-        }
-        
-        .highlight-item {
-            border: 1px solid var(--dourado);
-            background-color: rgba(255, 248, 240, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .highlight-item::before {
-            content: "★";
+        .badge-popular {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            color: var(--dourado);
-            font-size: 1.2rem;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            z-index: 10;
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .badge-especial {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--gold);
+            color: var(--text-dark);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            z-index: 10;
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .category-badge {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
         
         .floral-divider {
             text-align: center;
+            color: var(--text-light);
+            font-size: 1.5rem;
             margin: 40px 0;
-            color: var(--rosa-escuro);
-            font-size: 1.5rem;
+            opacity: 0.6;
             letter-spacing: 10px;
-            opacity: 0.5;
-        }
-        
-        .contact-section {
-            background-color: var(--rosa-poeira);
-            padding: 60px 40px;
-            margin-top: 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-section::before {
-            content: "";
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            top: -100px;
-            right: -100px;
-        }
-        
-        .contact-section::after {
-            content: "";
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.2);
-            bottom: -75px;
-            left: -75px;
-        }
-        
-        .contact-title {
-            color: var(--marrom-escuro);
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .contact-title::after {
-            content: "";
-            position: absolute;
-            width: 50%;
-            height: 1px;
-            background-color: var(--dourado);
-            bottom: -10px;
-            left: 25%;
-        }
-        
-        .contact-info {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .contact-item {
-            margin-bottom: 25px;
-        }
-        
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            color: var(--marrom-escuro);
-            font-size: 1.5rem;
-            border: 1px solid var(--rosa-suave);
-        }
-        
-        .contact-text {
-            color: var(--marrom-escuro);
-            font-size: 1.1rem;
         }
         
         .footer {
-            background-color: var(--marrom-escuro);
-            color: var(--rosa-poeira);
-            padding: 40px 0;
-            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
         }
         
         .footer-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: var(--rosa-poeira);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--secondary-color);
             margin-bottom: 20px;
-            font-weight: 600;
         }
         
-        .social-icons {
-            margin: 25px 0;
+        .contact-info {
+            color: #f0e6d6;
         }
         
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            margin: 0 8px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background-color: var(--dourado);
-            color: var(--marrom-escuro);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .info-note {
-            background-color: var(--rosa-poeira);
-            padding: 25px;
-            margin: 30px 0;
-            border-left: 3px solid var(--dourado);
-            font-style: italic;
-            color: var(--marrom-claro);
-        }
-        
-        .info-note i {
-            color: var(--dourado);
+        .contact-info i {
+            color: var(--gold);
             margin-right: 10px;
+            width: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 30px 0;
+        }
+        
+        .info-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--secondary-color);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .info-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
         }
         
         @media (max-width: 768px) {
             .logo {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             
             .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .item-name {
                 font-size: 1.5rem;
             }
             
-            .item-price {
-                font-size: 1.6rem;
-            }
-            
-            .menu-item {
-                padding: 20px;
+            .menu-card-img {
+                height: 180px;
             }
         }
         
-        .price-unit {
-            font-size: 0.9rem;
-            color: var(--marrom-claro);
-            font-weight: 400;
-            margin-left: 5px;
+        .container-main {
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .decorative-flourish {
-            text-align: center;
-            color: var(--rosa-escuro);
-            font-size: 2rem;
-            margin: 20px 0;
-            opacity: 0.5;
-            letter-spacing: 15px;
+        .price-highlight {
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="decorative-border"></div>
-    <div class="page-container">
-        <!-- Cabeçalho -->
-        <header class="header">
-            <div class="container">
-                <h1 class="logo">Sabores da GiseLe Moureira</h1>
-                <p class="subtitle">Doces finos & Bolcachinhas artesanais</p>
-                
-                <div class="encomenda-notice">
-                    <h4 style="color: var(--marrom-escuro); margin-bottom: 10px;">
-                        <i class="fas fa-calendar-alt"></i> Trabalhamos exclusivamente com encomendas
-                    </h4>
-                    <p style="color: var(--marrom-claro); margin-bottom: 0;">
-                        Pedidos devem ser feitos com no mínimo 48h de antecedência. Entrega disponível para toda a região.
-                    </p>
+    <!-- Cabeçalho -->
+    <div class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="logo">Sabores da GiseLe Moureira</h1>
+                    <p class="tagline">Doces finos e bolcachinhas artesanais feitos com amor e ingredientes selecionados</p>
+                    
+                    <div class="encomenda-info">
+                        <h5><i class="fas fa-calendar-alt"></i> Trabalhamos com encomendas</h5>
+                        <p class="mb-0">Pedidos devem ser realizados com 48h de antecedência. Entrega disponível para toda a região.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div class="mt-3 mt-md-0">
+                        <div class="d-inline-block p-3 rounded" style="background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                            <i class="fas fa-phone-alt fa-2x mb-2" style="color: var(--gold);"></i>
+                            <p class="mb-0">(11) 98765-4321</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </header>
-        
-        <!-- Conteúdo Principal -->
-        <main class="container" style="padding: 0 30px;">
-            <!-- Bolcachinhas Artesanais -->
-            <section class="menu-category">
-                <h2 class="section-title">Bolcachinhas Artesanais</h2>
-                <div class="decorative-flourish">❀ ❀ ❀</div>
+        </div>
+    </div>
+    
+    <!-- Conteúdo principal -->
+    <div class="container container-main">
+        <!-- Bolcachinhas -->
+        <section class="mb-5">
+            <h2 class="section-title">Bolcachinhas Artesanais</h2>
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="menu-card position-relative">
+                        <span class="badge-popular">Mais Pedido</span>
+                        <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolcachinha de Chocolate com Avelã">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Chocolate com Avelã</h5>
+                            <p class="menu-item-description">Bolcachinha crocante recheada com creme de chocolate belga e avelãs selecionadas. Uma combinação clássica irresistível.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 58,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="row">
-                    <!-- Item 1 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="menu-item highlight-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Chocolate Belga com Avelã</h3>
-                                <div class="item-price">R$ 58,00</div>
-                            </div>
-                            <p class="item-description">
-                                Bolcachinha crocante recheada com creme de chocolate belga 70% e avelãs torradas. Finalizada com flor de sal para um toque sofisticado.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
+                <!-- Item 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1578985545067-53d6ba6d1c93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolcachinha de Baunilha com Framboesa">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Baunilha com Framboesa</h5>
+                            <p class="menu-item-description">Massa delicada de baunilha com recheio de framboesa fresca. Um equilíbrio perfeito entre doce e ácido.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 54,00</div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Item 2 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Baunilha Bourbon com Framboesa</h3>
-                                <div class="item-price">R$ 54,00</div>
-                            </div>
-                            <p class="item-description">
-                                Massa delicada de baunilha bourbon com recheio de framboesa fresca e uma pitada de limão siciliano para equilíbrio perfeito.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Limão Siciliano e Gengibre</h3>
-                                <div class="item-price">R$ 52,00</div>
-                            </div>
-                            <p class="item-description">
-                                Sabor refrescante de limão siciliano com toque picante de gengibre cristalizado. Perfeita para acompanhar chás da tarde.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 4 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Nozes e Canela</h3>
-                                <div class="item-price">R$ 54,00</div>
-                            </div>
-                            <p class="item-description">
-                                Massa amanteigada com pedaços de nozes e um toque de canela em pau. Sabor aconchegante e sofisticado para momentos especiais.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 5 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Laranja e Cardamomo</h3>
-                                <div class="item-price">R$ 52,00</div>
-                            </div>
-                            <p class="item-description">
-                                Combinação cítrica de laranja com especiarias selecionadas, incluindo cardamomo. Um toque oriental em cada mordida.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 6 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="menu-item highlight-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Mix Premium (6 sabores)</h3>
-                                <div class="item-price">R$ 62,00</div>
-                            </div>
-                            <p class="item-description">
-                                Caixa especial com uma unidade de cada sabor: chocolate, baunilha-framboesa, limão, nozes, laranja e doce de leite nobre.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-gift"></i> Presente perfeito
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="menu-card position-relative">
+                        <span class="badge-especial">Novidade</span>
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolcachinha de Limão Siciliano">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Limão Siciliano</h5>
+                            <p class="menu-item-description">Sabor refrescante de limão siciliano com uma pitada de gengibre. Perfeita para acompanhar um chá da tarde.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 52,00</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <div class="floral-divider">✽ ✽ ✽</div>
-            
-            <!-- Doces Finos & Sobremesas -->
-            <section class="menu-category">
-                <h2 class="section-title">Doces Finos & Sobremesas</h2>
-                <div class="decorative-flourish">❁ ❁ ❁</div>
-                
-                <div class="row">
-                    <!-- Item 1 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item highlight-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Brigadeiro Gourmet 70% Cacau</h3>
-                                <div class="item-price">R$ 45,00</div>
-                            </div>
-                            <p class="item-description">
-                                Feito com chocolate belga 70% cacau e leite condensado artesanal. Disponível nas versões: tradicional, com flor de sal ou com amêndoas laminadas.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 2 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Macaron Francês</h3>
-                                <div class="item-price">R$ 60,00</div>
-                            </div>
-                            <p class="item-description">
-                                Autênticos macarons franceses. Sabores disponíveis: framboesa, pistache, baunilha bourbon, chocolate belga, limão siciliano.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Petit Gâteau</h3>
-                                <div class="item-price">R$ 26,00</div>
-                            </div>
-                            <p class="item-description">
-                                Bolinho de chocolate com casca crocante e interior cremoso que derrete na boca. Acompanha ganache de chocolate belga e frutas vermelhas.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-wine-glass-alt"></i> Porção individual
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 4 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Mini Tártaras de Frutas</h3>
-                                <div class="item-price">R$ 78,00</div>
-                            </div>
-                            <p class="item-description">
-                                Base de massa amanteigada com creme patissier e frutas da estação. Disponível em versões: vermelhas, frutas tropicais ou caramelo salgado.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-box"></i> Caixa com 6 unidades
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <div class="floral-divider">✽ ✽ ✽</div>
-            
-            <!-- Tortas & Bolos -->
-            <section class="menu-category">
-                <h2 class="section-title">Tortas & Bolos</h2>
-                <div class="decorative-flourish">❃ ❃ ❃</div>
-                
-                <div class="row">
-                    <!-- Item 1 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item highlight-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Torta de Limão Merengue</h3>
-                                <div class="item-price">R$ 85,00</div>
-                            </div>
-                            <p class="item-description">
-                                Base crocante de biscoito, creme de limão siciliano e merengue italiano dourado. Diâmetro: 22cm (serve 8 pessoas).
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-users"></i> Serve 8 pessoas
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 2 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Cheesecake de Frutas Vermelhas</h3>
-                                <div class="item-price">R$ 92,00</div>
-                            </div>
-                            <p class="item-description">
-                                Base de biscoito amanteigado, creme de cream cheese suave e cobertura de frutas vermelhas frescas. Diâmetro: 22cm.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-users"></i> Serve 8 pessoas
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Bolo Red Velvet</h3>
-                                <div class="item-price">R$ 105,00</div>
-                            </div>
-                            <p class="item-description">
-                                Camadas de bolo vermelho aveludado com recheio de cream cheese frosting. Decorado com raspas de chocolate branco. Tamanho: 20cm.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-birthday-cake"></i> Serve 10 pessoas
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 4 -->
-                    <div class="col-lg-6 mb-4">
-                        <div class="menu-item">
-                            <div class="item-header">
-                                <h3 class="item-name">Torta Holandesa</h3>
-                                <div class="item-price">R$ 88,00</div>
-                            </div>
-                            <p class="item-description">
-                                Base de biscoito, creme de baunilha com toque de conhaque e cobertura de chocolate meio amargo. Diâmetro: 22cm.
-                            </p>
-                            <div class="item-details">
-                                <i class="fas fa-users"></i> Serve 8 pessoas
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Informações importantes -->
-            <div class="info-note">
-                <p><i class="fas fa-info-circle"></i> <strong>Prazo de encomenda:</strong> Pedidos devem ser feitos com mínimo de 48 horas de antecedência. Para datas especiais (Natal, Páscoa, aniversários), recomendamos encomendar com uma semana de antecedência.</p>
-                <p><i class="fas fa-shipping-fast"></i> <strong>Entrega:</strong> Entregamos em toda a cidade e região metropolitana. Taxa de entrega varia conforme a localização. Retirada disponível em nosso ateliê sem custo adicional.</p>
-                <p><i class="fas fa-credit-card"></i> <strong>Pagamento:</strong> Aceitamos PIX, cartões de crédito/débito e transferência bancária. Para encomendas acima de R$ 150,00, parcelamos em até 3x sem juros no cartão.</p>
             </div>
-        </main>
-        
-        <!-- Seção de Contato -->
-        <section class="contact-section">
-            <div class="container">
-                <h2 class="contact-title">Faça sua encomenda</h2>
-                
-                <div class="contact-info">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h5>Telefone & WhatsApp</h5>
-                                <p>(11) 98765-4321</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-3 col-sm-6 contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h5>E-mail</h5>
-                                <p>encomendas@saboresdagisele.com.br</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-3 col-sm-6 contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h5>Ateliê</h5>
-                                <p>Rua das Flores, 123 - Centro</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-3 col-sm-6 contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h5>Horário</h5>
-                                <p>Segunda a Sábado<br>9h às 18h</p>
+            
+            <div class="row mt-3">
+                <!-- Item 4 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="menu-card">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Nozes e Canela</h5>
+                            <p class="menu-item-description">Massa amanteigada com pedaços de nozes e um toque de canela em pau. Sabor aconchegante e sofisticado.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 54,00</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <p style="margin-top: 40px; color: var(--marrom-claro); font-style: italic;">
-                    <i class="fas fa-heart" style="color: var(--dourado); margin-right: 8px;"></i>
-                    Cada doce é preparado artesanalmente com ingredientes selecionados e muito carinho
-                </p>
+                <!-- Item 5 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="menu-card">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Laranja e Cardamomo</h5>
+                            <p class="menu-item-description">Combinação cítrica de laranja com especiarias selecionadas. Um toque oriental em cada mordida.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 52,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 6 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="menu-card position-relative">
+                        <span class="badge-especial">Especial</span>
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolcachinha</span>
+                            <h5 class="menu-item-title">Mix Premium (6 sabores)</h5>
+                            <p class="menu-item-description">Caixa especial com uma unidade de cada sabor: chocolate, baunilha-framboesa, limão, nozes, laranja e doce de leite.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">presente perfeito</div>
+                                <div class="menu-item-price">R$ 62,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         
-        <!-- Rodapé -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-logo">Sabores da GiseLe Moureira</div>
-                <p style="color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto;">
-                    Doces finos & Bolcachinhas artesanais • Ateliê de confeitaria
-                </p>
-                
-                <div class="social-icons">
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+        <div class="floral-divider">✦ ✦ ✦</div>
+        
+        <!-- Doces Finos -->
+        <section class="mb-5">
+            <h2 class="section-title">Doces Finos & Sobremesas</h2>
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card position-relative">
+                        <span class="badge-popular">Clássico</span>
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Brigadeiro Gourmet">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Doce Fino</span>
+                            <h5 class="menu-item-title">Brigadeiro Gourmet 70% Cacau</h5>
+                            <p class="menu-item-description">Feito com chocolate belga 70% e leite condensado artesanal. Finalizado com cacau em pó ou granulado de chocolate.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 45,00</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="copyright">
-                    &copy; 2023 Sabores da GiseLe Moureira. Todos os direitos reservados.<br>
-                    Cardápio de encomendas • Preços sujeitos a alteração sem aviso prévio
+                <!-- Item 2 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Macaron Francês">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Doce Fino</span>
+                            <h5 class="menu-item-title">Macaron Francês</h5>
+                            <p class="menu-item-description">Delicados macarons com recheios variados: framboesa, pistache, baunilha e chocolate. Autêntica receita francesa.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 60,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1624353365286-3f8d62dadadf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Petit Gâteau">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Sobremesa</span>
+                            <h5 class="menu-item-title">Petit Gâteau</h5>
+                            <p class="menu-item-description">Mini bolo de chocolate com recheio cremoso que derrete na boca. Acompanha sorvete de baunilha artesanal.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">porção individual</div>
+                                <div class="menu-item-price">R$ 26,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card position-relative">
+                        <span class="badge-especial">Sazonal</span>
+                        <div class="menu-card-body">
+                            <span class="category-badge">Doce Fino</span>
+                            <h5 class="menu-item-title">Mini Tártaras de Frutas</h5>
+                            <p class="menu-item-description">Base de massa amanteigada com creme patissier e frutas da estação. Disponível em versões: vermelhas, tropicais ou caramelo salgado.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">caixa com 6 unidades</div>
+                                <div class="menu-item-price">R$ 78,00</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </section>
+        
+        <div class="floral-divider">✦ ✦ ✦</div>
+        
+        <!-- Tortas & Bolos -->
+        <section class="mb-5">
+            <h2 class="section-title">Tortas & Bolos</h2>
+            <div class="row">
+                <!-- Item 1 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Torta de Limão">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Torta</span>
+                            <h5 class="menu-item-title">Torta de Limão Merengue</h5>
+                            <p class="menu-item-description">Base crocante de biscoito, creme de limão siciliano e merengue italiano dourado. Clássico aperfeiçoado.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">diâmetro 22cm (serve 8)</div>
+                                <div class="menu-item-price">R$ 85,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card position-relative">
+                        <span class="badge-popular">Favorito</span>
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Bolo Red Velvet">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Bolo</span>
+                            <h5 class="menu-item-title">Bolo Red Velvet</h5>
+                            <p class="menu-item-description">Camadas de bolo vermelho aveludado com cream cheese frosting. Uma experiência única de texturas e sabores.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">tamanho 20cm (serve 10)</div>
+                                <div class="menu-item-price">R$ 105,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="menu-card-img" alt="Cheesecake de Frutas Vermelhas">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Torta</span>
+                            <h5 class="menu-item-title">Cheesecake de Frutas Vermelhas</h5>
+                            <p class="menu-item-description">Base de biscoito, creme de cream cheese suave e cobertura de frutas vermelhas frescas. Equilíbrio perfeito.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">diâmetro 22cm (serve 8)</div>
+                                <div class="menu-item-price">R$ 92,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="col-md-6 col-sm-6 mb-4">
+                    <div class="menu-card">
+                        <div class="menu-card-body">
+                            <span class="category-badge">Torta</span>
+                            <h5 class="menu-item-title">Torta Holandesa</h5>
+                            <p class="menu-item-description">Base de biscoito, creme de baunilha com toque de conhaque e cobertura de chocolate meio amargo. Sofisticação em cada fatia.</p>
+                            <div class="menu-item-price-container">
+                                <div class="price-detail">diâmetro 22cm (serve 8)</div>
+                                <div class="menu-item-price">R$ 88,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Informações adicionais -->
+        <div class="row mt-5 mb-4">
+            <div class="col-md-4 mb-4">
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Prazo de Encomenda</h4>
+                    <p>Pedidos devem ser feitos com <strong>mínimo de 48 horas de antecedência</strong>. Para datas especiais (Natal, Páscoa, etc), recomendamos encomendar com uma semana de antecedência.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4>Entrega</h4>
+                    <p>Entregamos em toda a cidade e região metropolitana. <strong>Taxa de entrega</strong> varia conforme a localização. Retirada disponível em nosso ateliê sem custo adicional.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4>Pagamento</h4>
+                    <p>Aceitamos PIX, cartões de crédito/débito e transferência bancária. Para encomendas acima de R$ 150,00, parcelamos em até 3x sem juros no cartão.</p>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="footer-logo">Sabores da GiseLe Moureira</div>
+                    <p>Doces finos e bolcachinhas artesanais preparados com técnica, paixão e os melhores ingredientes.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3" style="color: var(--gold);">Contato</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro</p>
+                        <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                        <p><i class="fas fa-envelope"></i> contato@saboresdagisele.com.br</p>
+                        <p><i class="fas fa-clock"></i> Segunda a Sábado, 9h às 18h</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3" style="color: var(--gold);">Formas de Pagamento</h5>
+                    <div class="mb-3">
+                        <i class="fab fa-cc-visa fa-2x me-2"></i>
+                        <i class="fab fa-cc-mastercard fa-2x me-2"></i>
+                        <i class="fab fa-cc-amex fa-2x me-2"></i>
+                        <i class="fab fa-cc-paypal fa-2x"></i>
+                    </div>
+                    <p style="color: #f0e6d6;">Aceitamos também PIX e dinheiro.</p>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0" style="color: rgba(255,255,255,0.7);">
+                        &copy; 2023 Sabores da GiseLe Moureira. Todos os direitos reservados.<br>
+                        Cardápio de encomendas • Preços sujeitos a alteração sem aviso prévio
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Efeitos suaves -->
+    <!-- Script para navegação suave -->
     <script>
-        // Adicionar classe de animação aos itens do menu quando aparecem na tela
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        // Animação suave para os cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.menu-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
             });
-        }, observerOptions);
-        
-        // Aplicar efeito aos itens do menu
-        document.querySelectorAll('.menu-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            item.style.transitionDelay = (index * 0.1) + 's';
-            observer.observe(item);
         });
-        
-        // Efeito suave para a seção de contato
-        const contactSection = document.querySelector('.contact-section');
-        contactSection.style.opacity = '0';
-        contactSection.style.transform = 'translateY(30px)';
-        contactSection.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        
-        const contactObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        contactObserver.observe(contactSection);
     </script>
 </body>
 </html>
